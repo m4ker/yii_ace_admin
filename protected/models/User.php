@@ -36,13 +36,13 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('sEmail, sPassword', 'required'),
-            array('sEmail, sUserName', 'unique'),
-			array('iDeleted, iCreated, iUpdated', 'numerical', 'integerOnly'=>true),
-			array('sEmail, sUserName, sNickName, sPassword, sLastIp', 'length', 'max'=>100),
+			array('email, password', 'required'),
+            array('email, username', 'unique'),
+			array('is_deleted, created_at, updated_at', 'numerical', 'integerOnly'=>true),
+			array('email, username, nickname, password, last_ip', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('iUserID, sEmail, sUserName, sNickName, iDeleted, iCreated, iUpdated', 'safe', 'on'=>'search'),
+			array('id, email, username, nickname, is_deleted, created_at, updated_at', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -63,15 +63,15 @@ class User extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'iUserID' => 'ID',
-			'sEmail' => '登陆邮箱',
-			'sUserName' => '用户名',
-			'sNickName' => '用户昵称',
-			'sPassword' => '登陆密码',
-			'sLastIp' => '最后登陆IP',
-			'iDeleted' => '已删除',
-			'iCreated' => '创建时间',
-			'iUpdated' => '更新时间',
+			'id' => 'ID',
+			'email' => '登陆邮箱',
+			'userame' => '用户名',
+			'nickname' => '用户昵称',
+			'password' => '登陆密码',
+			'last_ip' => '最后登陆IP',
+			'is_deleted' => '已删除',
+			'created_at' => '创建时间',
+			'updated_at' => '更新时间',
 		);
 	}
 
@@ -93,19 +93,19 @@ class User extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('iUserID',$this->iUserID);
-		$criteria->compare('sEmail',$this->sEmail,true);
-		$criteria->compare('sUserName',$this->sUserName,true);
-		$criteria->compare('sNickName',$this->sNickName,true);
-		$criteria->compare('sLastIp',$this->sLastIp,true);
-		$criteria->compare('iDeleted',$this->iDeleted);
-		$criteria->compare('iCreated',strtotime($this->iCreated));
-		$criteria->compare('iUpdated',strtotime($this->iUpdated));
+		$criteria->compare('id',$this->id);
+		$criteria->compare('email',$this->email,true);
+		$criteria->compare('username',$this->username,true);
+		$criteria->compare('nickname',$this->nickname,true);
+		$criteria->compare('last_ip',$this->last_ip,true);
+		$criteria->compare('is_deleted',$this->is_deleted);
+		$criteria->compare('created_at',strtotime($this->created_at));
+		$criteria->compare('updated_at',strtotime($this->updated_at));
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
             'sort'=>array(
-                'defaultOrder'=>'iUserID DESC',
+                'defaultOrder'=>'id DESC',
             )
 		));
 	}
@@ -124,9 +124,9 @@ class User extends CActiveRecord
     // 自动更新时间
     public function beforeSave()
     {
-        $this->iUpdated = time();
+        $this->updated_at = time();
         if ($this->isNewRecord)
-            $this->iCreated = time();
+            $this->created_at = time();
         return true;
     }
 }

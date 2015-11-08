@@ -12,33 +12,33 @@
 )); ?>
 
 	<div class="row">
-		<?php echo $form->label($model,'iLogID'); ?>
-		<?php echo $form->textField($model,'iLogID'); ?>
+		<?php echo $form->label($model,'id'); ?>
+		<?php echo $form->textField($model,'id'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'iUserID'); ?>
-		<?php echo $form->textField($model,'iUserID'); ?>
+		<?php echo $form->label($model,'user_id'); ?>
+		<?php echo $form->textField($model,'user_id'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'sUri'); ?>
-		<?php echo $form->textField($model,'sUri',array('size'=>60,'maxlength'=>1000)); ?>
+		<?php echo $form->label($model,'uri'); ?>
+		<?php echo $form->textField($model,'uri',array('size'=>60,'maxlength'=>1000)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'sData'); ?>
-		<?php echo $form->textArea($model,'sData',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->label($model,'data'); ?>
+		<?php echo $form->textArea($model,'data',array('rows'=>6, 'cols'=>50)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'sIp'); ?>
-		<?php echo $form->textField($model,'sIp',array('size'=>20,'maxlength'=>20)); ?>
+		<?php echo $form->label($model,'ip'); ?>
+		<?php echo $form->textField($model,'ip',array('size'=>20,'maxlength'=>20)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'iCreated'); ?>
-		<?php echo $form->textField($model,'iCreated'); ?>
+		<?php echo $form->label($model,'created_at'); ?>
+		<?php echo $form->textField($model,'created_at'); ?>
 	</div>
 
 	<div class="row buttons">

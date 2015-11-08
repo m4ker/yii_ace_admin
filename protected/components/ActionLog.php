@@ -10,11 +10,11 @@ class ActionLog extends CFilter
     protected function preFilter($filterChain)
     {
         $log = new Log;
-        $log->sUri    = $_SERVER['REQUEST_URI'];
-        $log->sIp     = $_SERVER['REMOTE_ADDR'];
-        $log->sData   = json_encode($_POST);
-        $log->iUserID = Yii::app()->user->getId();
-        $log->iCreated = time();
+        $log->uri    = $_SERVER['REQUEST_URI'];
+        $log->ip     = $_SERVER['REMOTE_ADDR'];
+        $log->data   = json_encode($_POST);
+        $log->user_id = Yii::app()->user->getId();
+        $log->created_at = time();
         $log->save();
         /*
         if ($_POST)

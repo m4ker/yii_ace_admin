@@ -30,32 +30,32 @@ $('.search-form form').submit(function(){
 	'filter'=>$model,
 	'columns'=>array(
         array(
-            'name' => 'iLogID',
+            'name' => 'id',
             'htmlOptions' => array(
                 'width' => 80
             ),
         ),
         array(
-            'name' => 'iUserID',
+            'name' => 'user_id',
             'htmlOptions' => array(
                 'width' => 80
             ),
         ),
         array(
-            'name' => 'sUri',
+            'name' => 'uri',
             'htmlOptions' => array(
                 //'width' => 200
             ),
         ),
         array(
-            'name' => 'sIp',
+            'name' => 'ip',
             'htmlOptions' => array(
                 'width' => 100
             ),
         ),
         array(
-            'name'=>'iCreated',
-            'value'=>'date("Y-m-d H:i:s", $data->iCreated)',
+            'name'=>'created_at',
+            'value'=>'date("Y-m-d H:i:s", $data->created_at)',
             'htmlOptions' => array(
                 'width' => 150
             ),

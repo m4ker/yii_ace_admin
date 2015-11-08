@@ -29,14 +29,14 @@ class Log extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('iUserID, sUri, iCreated', 'required'),
-			array('iUserID, iCreated', 'numerical', 'integerOnly'=>true),
-			array('sUri', 'length', 'max'=>1000),
-			array('sIp', 'length', 'max'=>20),
-			array('sData', 'safe'),
+			array('user_id, uri, created_at', 'required'),
+			array('user_id, created_at', 'numerical', 'integerOnly'=>true),
+			array('uri', 'length', 'max'=>1000),
+			array('ip', 'length', 'max'=>20),
+			array('data', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('iLogID, iUserID, sUri, sData, sIp, iCreated', 'safe', 'on'=>'search'),
+			array('id, user_id, uri, data, ip, created_at', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -57,12 +57,12 @@ class Log extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'iLogID' => 'ID',
-			'iUserID' => '用户ID',
-			'sUri' => '请求地址',
-			'sData' => '数据',
-			'sIp' => '请求IP',
-			'iCreated' => '创建时间',
+			'id' => 'ID',
+			'user_id' => '用户ID',
+			'uri' => '请求地址',
+			'data' => '数据',
+			'ip' => '请求IP',
+			'created_at' => '创建时间',
 		);
 	}
 
@@ -84,17 +84,17 @@ class Log extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('iLogID',$this->iLogID);
-		$criteria->compare('iUserID',$this->iUserID);
-		$criteria->compare('sUri',$this->sUri,true);
-		$criteria->compare('sData',$this->sData,true);
-		$criteria->compare('sIp',$this->sIp,true);
-		$criteria->compare('iCreated',$this->iCreated);
+		$criteria->compare('id',$this->id);
+		$criteria->compare('user_id',$this->user_id);
+		$criteria->compare('uri',$this->uri,true);
+		$criteria->compare('data',$this->data,true);
+		$criteria->compare('ip',$this->ip,true);
+		$criteria->compare('created_at',$this->created_at);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
             'sort'=>array(
-                'defaultOrder'=>'iLogID DESC',
+                'defaultOrder'=>'id DESC',
             )
 		));
 	}

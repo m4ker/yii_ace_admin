@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	'用户'=>array('index'),
-	$model->sEmail=>array('update','id'=>$model->iUserID),
+	$model->sEmail=>array('update','id'=>$model->id),
 	'编辑',
 );
 ?>
@@ -13,7 +13,7 @@ $this->breadcrumbs=array(
         编辑用户
         <small>
             <i class="ace-icon fa fa-angle-double-right"></i>
-            #<?php echo $model->iUserID; ?>
+            #<?php echo $model->id; ?>
         </small>
     </h1>
 </div>

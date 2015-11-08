@@ -15,31 +15,31 @@ $this->breadcrumbs=array(
 	'filter'=>$model,
 	'columns'=>array(
         array(
-            'name' => 'iUserID',
+            'name' => 'id',
             'htmlOptions' => array(
                 'width' => 80
             ),
         ),
         array(
-            'name' => 'sEmail',
+            'name' => 'email',
             'htmlOptions' => array(
                 //'width' => 80
             ),
         ),
         array(
-            'name' => 'sUserName',
+            'name' => 'username',
             'htmlOptions' => array(
                 //'width' => 80
             ),
         ),
         array(
-            'name' => 'sNickName',
+            'name' => 'nickname',
             'htmlOptions' => array(
                 //'width' => 80
             ),
         ),
         array(
-            'name' => 'sLastIp',
+            'name' => 'last_ip',
             'htmlOptions' => array(
                 'width' => 150
             ),

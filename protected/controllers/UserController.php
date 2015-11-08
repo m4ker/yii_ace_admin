@@ -67,12 +67,12 @@ class UserController extends Controller
 		if(isset($_POST['User']))
 		{
 			$model->attributes=$_POST['User'];
-            if ($_POST['User']['sPassword'])
-                $model->sPassword = md5($_POST['User']['sPassword']);
+            if ($_POST['User']['password'])
+                $model->sPassword = md5($_POST['User']['password']);
 
 			if($model->save()){
                 Yii::app()->user->setFlash('success','用户创建成功');
-                $this->redirect(array('update','id'=>$model->iUserID));
+                $this->redirect(array('update','id'=>$model->id));
             }
 		}
 
@@ -95,16 +95,16 @@ class UserController extends Controller
 
         if(isset($_POST['User']))
         {
-            if (empty($_POST['User']['sPassword'])) {
-                unset($_POST['User']['sPassword']);
+            if (empty($_POST['User']['password'])) {
+                unset($_POST['User']['password']);
             } else {
-                $_POST['User']['sPassword'] = md5($_POST['User']['sPassword']);
+                $_POST['User']['password'] = md5($_POST['User']['password']);
             }
             $model->attributes=$_POST['User'];
 
             if($model->save()) {
                 Yii::app()->user->setFlash('success','用户更新成功');
-                $this->redirect(array('update','id'=>$model->iUserID));
+                $this->redirect(array('update','id'=>$model->id));
             }
 
         }
@@ -129,10 +129,10 @@ class UserController extends Controller
 
         if(isset($_POST['User']))
         {
-            if (empty($_POST['User']['sPassword'])) {
-                unset($_POST['User']['sPassword']);
+            if (empty($_POST['User']['password'])) {
+                unset($_POST['User']['password']);
             } else {
-                $_POST['User']['sPassword'] = md5($_POST['User']['sPassword']);
+                $_POST['User']['password'] = md5($_POST['User']['password']);
             }
             $model->attributes=$_POST['User'];
 

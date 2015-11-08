@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	'操作日志'=>array('index'),
-	$model->iLogID,
+	$model->id,
 );
 ?>
 <div class="page-header">
@@ -19,19 +19,19 @@ $this->breadcrumbs=array(
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'iLogID',
-		'iUserID',
-		'sUri',
+		'id',
+		'user_id',
+		'uri',
 		//'sData',
         array(
-            'name'=>'sData',
+            'name'=>'data',
             'type' => 'raw',
-            'value'=>"<pre>".var_export(json_decode($model->sData, TRUE), TRUE)."</pre>",
+            'value'=>"<pre>".var_export(json_decode($model->data, TRUE), TRUE)."</pre>",
         ),
-		'sIp',
+		'ip',
         array(
-            'name'=>'iCreated',
-            'value'=>date("Y-m-d H:i:s", $model->iCreated),
+            'name'=>'created_at',
+            'value'=>date("Y-m-d H:i:s", $model->created_at),
         ),
 	),
 )); ?>
