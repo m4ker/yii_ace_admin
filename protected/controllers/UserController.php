@@ -68,7 +68,7 @@ class UserController extends Controller
 		{
 			$model->attributes=$_POST['User'];
             if ($_POST['User']['password'])
-                $model->sPassword = md5($_POST['User']['password']);
+                $model->password = md5($_POST['User']['password']);
 
 			if($model->save()){
                 Yii::app()->user->setFlash('success','用户创建成功');

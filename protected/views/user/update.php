@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	'用户'=>array('index'),
-	$model->sEmail=>array('update','id'=>$model->id),
+	$model->email=>array('update','id'=>$model->id),
 	'编辑',
 );
 ?>

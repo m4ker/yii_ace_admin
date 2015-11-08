@@ -18,30 +18,30 @@ $this->breadcrumbs=array(
     <div class="col-xs-12">
         <?php echo $form->errorSummary($model,'<div class="alert alert-danger">','</div>'); ?>
         <div class="form-group">
-            <?php echo $form->labelEx($model,'sEmail', array('class'=>'col-sm-3 control-label no-padding-right')); ?>
+            <?php echo $form->labelEx($model,'email', array('class'=>'col-sm-3 control-label no-padding-right')); ?>
             <div class="col-sm-9">
-                <?php echo $form->textField($model,'sEmail',array('size'=>60,'maxlength'=>100,'class' => 'col-xs-10 col-sm-10')); ?>
+                <?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>100,'class' => 'col-xs-10 col-sm-10')); ?>
             </div>
         </div>
         <div class="form-group">
-            <?php echo $form->labelEx($model,'sUserName', array('class'=>'col-sm-3 control-label no-padding-right')); ?>
+            <?php echo $form->labelEx($model,'username', array('class'=>'col-sm-3 control-label no-padding-right')); ?>
             <div class="col-sm-9">
-                <?php echo $form->textField($model,'sUserName',array('size'=>60,'maxlength'=>100,'class' => 'col-xs-10 col-sm-10')); ?>
+                <?php echo $form->textField($model,'username',array('size'=>60,'maxlength'=>100,'class' => 'col-xs-10 col-sm-10')); ?>
             </div>
         </div>
         <div class="form-group">
-            <?php echo $form->labelEx($model,'sNickName', array('class'=>'col-sm-3 control-label no-padding-right')); ?>
+            <?php echo $form->labelEx($model,'nickname', array('class'=>'col-sm-3 control-label no-padding-right')); ?>
             <div class="col-sm-9">
                 <input type="text" style="display:none;" /><!-- 防止chrome自动填充 -->
-                <?php echo $form->textField($model,'sNickName',array('size'=>60,'maxlength'=>100,'class' => 'col-xs-10 col-sm-10')); ?>
+                <?php echo $form->textField($model,'nickname',array('size'=>60,'maxlength'=>100,'class' => 'col-xs-10 col-sm-10')); ?>
             </div>
         </div>
         <div class="form-group">
-            <?php echo $form->labelEx($model,'sPassword', array('class'=>'col-sm-3 control-label no-padding-right')); ?>
+            <?php echo $form->labelEx($model,'password', array('class'=>'col-sm-3 control-label no-padding-right')); ?>
             <div class="col-sm-9">
 
                 <input type="text" style="display:none;" /><!-- 防止chrome自动填充 -->
-                <?php echo $form->passwordField($model,'sPassword',array('value' => '', 'size'=>60,'maxlength'=>100,'class' => 'col-xs-10 col-sm-10')); ?>
+                <?php echo $form->passwordField($model,'password',array('value' => '', 'size'=>60,'maxlength'=>100,'class' => 'col-xs-10 col-sm-10')); ?>
             </div>
         </div>
         <div class="clearfix form-actions">
